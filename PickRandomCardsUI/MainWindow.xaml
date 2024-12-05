@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="142*"/>
+            <RowDefinition Height="75*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+            <Label Content="How many cards should I pick?" HorizontalAlignment="Left" Margin="20,126,0,0" VerticalAlignment="Top" Height="52" Width="380" FontSize="24"/>
+            <Slider Width="320" ValueChanged="Slider_ValueChanged"/>
+        </StackPanel>
+
+        
+        <ListBox Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="35,75,35,3" FontSize="22"/>
+        <Button Content="Pick Cards" HorizontalAlignment="Center" Margin="0,53,0,0" VerticalAlignment="Top" Height="35" Width="210" Grid.Row="1"/>
 
     </Grid>
 </Window>

@@ -20,5 +20,10 @@ namespace PickRandomCardsUI
         {
             InitializeComponent(); // test
         }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
     }
 }
