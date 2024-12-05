@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PickRandomCardsUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Card Picker" Height="300" Width="800">
+    <Grid x:Name="bruh">
         <Grid.RowDefinitions>
 
             <RowDefinition Height="142*"/>
@@ -14,18 +14,21 @@
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="16*"/>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="57*"/>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="51*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
-            <Label Content="How many cards should I pick?" HorizontalAlignment="Left" Margin="20,126,0,0" VerticalAlignment="Top" Height="52" Width="380" FontSize="24"/>
-            <Slider Width="320" ValueChanged="Slider_ValueChanged"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3">
+            <Label Content="How many cards should I pick?" Height="52" Width="380" FontSize="24"/>
+            <Slider x:Name="numberOfCards" Width="377" ValueChanged="Slider_ValueChanged" Maximum="15" Minimum="1" AutoToolTipPlacement="TopLeft" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Foreground="Black"/>
         </StackPanel>
 
-        
-        <ListBox Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="35,75,35,3" FontSize="22"/>
-        <Button Content="Pick Cards" HorizontalAlignment="Center" Margin="0,53,0,0" VerticalAlignment="Top" Height="35" Width="210" Grid.Row="1"/>
+
+        <ListBox Name="listOfCards" Grid.Column="3" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="25,39,45,39" FontSize="22" Grid.RowSpan="2" Grid.ColumnSpan="2" SelectionChanged="ListBox_SelectionChanged"/>
+        <Button Content="Pick Cards" HorizontalAlignment="Left" Margin="0,14,0,0" VerticalAlignment="Top" Height="35" Width="210" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1" Click="Button_Click"/>
 
     </Grid>
 </Window>
