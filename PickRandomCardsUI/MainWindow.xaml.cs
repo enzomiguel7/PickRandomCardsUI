@@ -18,7 +18,7 @@ namespace PickRandomCardsUI
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent(); // test
         }
     }
 }
